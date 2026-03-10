@@ -41,11 +41,14 @@ fi
 
 echo "Configuring Git..."
 
-git config --global user.name "YOUR_NAME"
-git config --global user.email "YOUR_EMAIL"
+git config --global user.name "David Madrid"
+git config --global user.email "code@dmadridy.com"
+
 git config --global init.defaultBranch main
 git config --global core.editor cursor
 git config --global pull.rebase false
+
+echo "Git configured successfully."
 
 ########################################
 # Configure Zsh
