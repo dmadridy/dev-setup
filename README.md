@@ -24,6 +24,7 @@ cursor-setup
 │  ├─ settings.json
 │  └─ extensions.txt
 ├─ setup.sh
+├─ setup-vscode.sh
 ├─ export.sh
 ├─ bootstrap.sh
 ├─ ssh-setup.sh
@@ -40,6 +41,9 @@ List of installed Cursor extensions.
 
 **setup.sh**
 Installs Cursor extensions and applies editor settings.
+
+**setup-vscode.sh**
+Installs VSCode extensions and applies editor settings (reuses the same `cursor/` config files).
 
 **export.sh**
 Exports the current local Cursor configuration into the repository.
@@ -65,6 +69,7 @@ Make scripts executable:
 
 ```
 chmod +x setup.sh
+chmod +x setup-vscode.sh
 chmod +x export.sh
 chmod +x bootstrap.sh
 chmod +x ssh-setup.sh
@@ -178,6 +183,25 @@ The script will:
 Restart Cursor after running the script.
 
 Your editor will now match the configuration stored in this repository.
+
+---
+
+# Setting Up VSCode
+
+After installing VSCode, run:
+
+```
+bash setup-vscode.sh
+```
+
+The script will:
+
+1. Install all extensions listed in `cursor/extensions.txt`
+2. Apply the editor settings from `cursor/settings.json`
+
+Restart VSCode after running the script.
+
+> **Note:** Make sure the `code` CLI is installed. Open the Command Palette (`Cmd + Shift + P`) and run `Shell Command: Install 'code' command in PATH`.
 
 ---
 
@@ -323,9 +347,10 @@ These improve everyday terminal workflow.
 
 # Notes
 
-- Extensions are installed using the Cursor CLI.
-- Settings overwrite the existing local Cursor configuration.
+- Extensions are installed using the Cursor or VSCode CLI.
+- Settings overwrite the existing local editor configuration.
 - `bootstrap.sh` prepares the machine for development.
 - `setup.sh` configures the Cursor editor itself.
+- `setup-vscode.sh` configures VSCode using the same `cursor/` config files.
 
 Together they allow a new development machine to be ready in a few minutes.
