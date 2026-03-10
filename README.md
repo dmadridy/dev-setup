@@ -10,6 +10,7 @@ It allows you to quickly configure a new machine with:
 - Zsh shell aliases
 - Node.js via NVM
 - Homebrew package manager
+- GitHub SSH authentication
 
 The repository acts as the **single source of truth** for your development environment.
 
@@ -25,6 +26,7 @@ cursor-setup
 ├─ setup.sh
 ├─ export.sh
 ├─ bootstrap.sh
+├─ ssh-setup.sh
 └─ README.md
 ```
 
@@ -45,6 +47,9 @@ Exports the current local Cursor configuration into the repository.
 **bootstrap.sh**
 Sets up the base development environment on a new machine.
 
+**ssh-setup.sh**
+Creates and configures an SSH key for GitHub authentication.
+
 ---
 
 # First Time Setup
@@ -62,6 +67,7 @@ Make scripts executable:
 chmod +x setup.sh
 chmod +x export.sh
 chmod +x bootstrap.sh
+chmod +x ssh-setup.sh
 ```
 
 ---
@@ -94,6 +100,65 @@ pull.rebase = false
 ```
 
 You should update your personal identity in the script if needed.
+
+---
+
+# SSH Setup (GitHub Authentication)
+
+The repository includes a script to configure **SSH authentication for GitHub**.
+
+Using SSH allows you to push and pull repositories without entering your password.
+
+Run the setup script:
+
+```
+bash ssh-setup.sh
+```
+
+The script will:
+
+- Create an `.ssh` directory if it doesn't exist
+- Generate an **ed25519 SSH key**
+- Use the email `code@dmadridy.com`
+- Configure SSH for GitHub
+- Add the key to the SSH agent
+- Print your public key in the terminal
+
+---
+
+### Add the key to GitHub
+
+Copy the printed key and add it to your GitHub account:
+
+```
+https://github.com/settings/keys
+```
+
+Click **New SSH Key**, paste the key, and save.
+
+---
+
+### Verify the connection
+
+Test that the authentication works:
+
+```
+ssh -T git@github.com
+```
+
+Expected output:
+
+```
+Hi USERNAME! You've successfully authenticated.
+```
+
+After this step, Git operations will work using SSH.
+
+Example:
+
+```
+git clone git@github.com:YOUR_USERNAME/cursor-setup.git
+```
 
 ---
 
