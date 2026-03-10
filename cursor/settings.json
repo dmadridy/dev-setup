@@ -1,5 +1,4 @@
 {
-  // Cursor settings
   "window.commandCenter": true,
   "workbench.colorTheme": "GitHub Dark Default",
   "[typescriptreact]": {
