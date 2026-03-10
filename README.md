@@ -16,6 +16,39 @@ The repository acts as the **single source of truth** for your development envir
 
 ---
 
+# Auth and Cloning the Repo
+
+Two cases: **corporate** (HTTPS only, no SSH) or **personal** (clone first, then run `ssh-setup.sh`). The repo is public — no credentials needed to clone.
+
+Clone:
+
+```
+git clone https://github.com/YOUR_USERNAME/cursor-setup.git
+cd cursor-setup
+```
+
+### Corporate
+
+Use HTTPS only. Do not run `ssh-setup.sh`. When you push, Git will ask for username and password or a [Personal Access Token](https://github.com/settings/tokens).
+
+### Personal
+
+Run bootstrap and SSH setup, add the key at [github.com/settings/keys](https://github.com/settings/keys), then optionally switch the remote to SSH:
+
+```
+chmod +x bootstrap.sh ssh-setup.sh
+bash bootstrap.sh
+bash ssh-setup.sh
+```
+
+Add the printed key in GitHub (**New SSH Key**). Optional:
+
+```
+git remote set-url origin git@github.com:YOUR_USERNAME/cursor-setup.git
+```
+
+---
+
 # Repository Structure
 
 ```
@@ -58,12 +91,7 @@ Creates and configures an SSH key for GitHub authentication.
 
 # First Time Setup
 
-Clone the repository:
-
-```
-git clone https://github.com/YOUR_USERNAME/cursor-setup.git
-cd cursor-setup
-```
+Clone the repository (see **Auth and Cloning the Repo** above).
 
 Make scripts executable:
 
@@ -110,7 +138,7 @@ You should update your personal identity in the script if needed.
 
 # SSH Setup (GitHub Authentication)
 
-The repository includes a script to configure **SSH authentication for GitHub**.
+The repository includes a script to configure **SSH authentication for GitHub**. Use this only on **personal/trusted devices**; for corporate accounts, use HTTPS only (see **Auth and Cloning the Repo**).
 
 Using SSH allows you to push and pull repositories without entering your password.
 
