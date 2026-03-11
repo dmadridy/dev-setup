@@ -18,8 +18,8 @@ This folder contains everything needed to bootstrap and configure a macOS develo
 From a terminal:
 
 ```bash
-git clone https://github.com/dmadridy/cursor-setup.git
-cd cursor-setup
+git clone https://github.com/dmadridy/dev-setup.git
+cd dev-setup
 ```
 
 For authentication details (corporate vs personal), see the global `README.md` section **“Auth and Cloning the Repo”**.
@@ -155,7 +155,7 @@ Typical flow:
 - **On Machine A (where you tweak the setup)**:
 
 ```bash
-cd cursor-setup
+cd dev-setup
 git pull
 bash macos/scripts/export.sh
 git add .
@@ -166,7 +166,7 @@ git push
 - **On Machine B (to apply the latest config)**:
 
 ```bash
-cd cursor-setup
+cd dev-setup
 git pull
 bash macos/scripts/setup.sh
 ```

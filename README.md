@@ -31,8 +31,8 @@ This repository should always be cloned **initially over HTTPS** so that it work
 Clone the repo:
 
 ```bash
-git clone https://github.com/dmadridy/cursor-setup.git
-cd cursor-setup
+git clone https://github.com/dmadridy/dev-setup.git
+cd dev-setup
 ```
 
 From here:
@@ -41,7 +41,7 @@ From here:
 - **Optionally**, you can configure SSH later (using the platform-specific instructions in `macos/` or `windows/`) and then switch the remote to SSH, for example:
 
 ```bash
-git remote set-url origin git@github.com:dmadridy/cursor-setup.git
+git remote set-url origin git@github.com:dmadridy/dev-setup.git
 ```
 
 SSH setup is optional and only needed if you prefer SSH-based Git operations.

@@ -19,8 +19,8 @@ This folder contains everything needed to configure a Windows development machin
 From a Git Bash (or any Bash) terminal:
 
 ```bash
-git clone https://github.com/dmadridy/cursor-setup.git
-cd cursor-setup
+git clone https://github.com/dmadridy/dev-setup.git
+cd dev-setup
 ```
 
 For auth and HTTPS vs SSH details, see the global `README.md` **“Auth and Cloning the Repo”** section.
@@ -117,7 +117,7 @@ Typical flow:
 - **On Machine A (where you tweak the setup)**:
 
 ```bash
-cd cursor-setup
+cd dev-setup
 git pull
 bash windows/scripts/export.sh
 git add .
@@ -128,7 +128,7 @@ git push
 - **On Machine B (to apply the latest config)**:
 
 ```bash
-cd cursor-setup
+cd dev-setup
 git pull
 bash windows/scripts/setup.sh
 ```
