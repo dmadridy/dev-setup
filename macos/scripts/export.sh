@@ -5,7 +5,8 @@ set -e
 echo "Exporting Cursor configuration..."
 
 CURSOR_CONFIG_DIR="$HOME/Library/Application Support/Cursor/User"
-REPO_CURSOR_DIR="$(pwd)/cursor"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_CURSOR_DIR="$SCRIPT_DIR/../config"
 
 mkdir -p "$REPO_CURSOR_DIR"
 

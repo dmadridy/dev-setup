@@ -24,18 +24,6 @@ else
 fi
 
 ########################################
-# Install Git
-########################################
-
-if ! command -v git &> /dev/null
-then
-    echo "Installing Git..."
-    brew install git
-else
-    echo "Git already installed"
-fi
-
-########################################
 # Configure Git
 ########################################
 

@@ -6,7 +6,9 @@ echo "Starting SSH setup..."
 
 SSH_DIR="$HOME/.ssh"
 KEY_PATH="$SSH_DIR/id_ed25519"
+NAME="David Madrid"
 EMAIL="code@dmadridy.com"
+GITHUB_USERNAME="dmadridy"
 
 mkdir -p $SSH_DIR
 chmod 700 $SSH_DIR
@@ -45,7 +47,7 @@ echo "--------------------------------------"
 cat "$KEY_PATH.pub"
 echo "--------------------------------------"
 echo ""
-echo "Add this key to GitHub:"
+echo "Add this key to GitHub account '$GITHUB_USERNAME':"
 echo "https://github.com/settings/keys"
 echo ""
-echo "SSH setup complete."
+echo "SSH setup complete for $NAME <$EMAIL>."

@@ -2,10 +2,10 @@
 
 set -e
 
-echo "Applying Cursor configuration..."
+echo "Applying Cursor configuration (Windows)..."
 
-CURSOR_CONFIG_DIR="$HOME/Library/Application Support/Cursor/User"
-REPO_CURSOR_DIR="$(pwd)/cursor"
+CURSOR_CONFIG_DIR="$APPDATA/Cursor/User"
+REPO_CURSOR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../config"
 
 # Ensure config directory exists
 mkdir -p "$CURSOR_CONFIG_DIR"

@@ -2,17 +2,18 @@
 
 set -e
 
-echo "Applying VSCode configuration..."
+echo "Applying Cursor configuration..."
 
-VSCODE_CONFIG_DIR="$HOME/Library/Application Support/Code/User"
-REPO_CURSOR_DIR="$(pwd)/cursor"
+CURSOR_CONFIG_DIR="$HOME/Library/Application Support/Cursor/User"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_CURSOR_DIR="$SCRIPT_DIR/../config"
 
 # Ensure config directory exists
-mkdir -p "$VSCODE_CONFIG_DIR"
+mkdir -p "$CURSOR_CONFIG_DIR"
 
 # Apply settings.json
 if [ -f "$REPO_CURSOR_DIR/settings.json" ]; then
-  cp "$REPO_CURSOR_DIR/settings.json" "$VSCODE_CONFIG_DIR/settings.json"
+  cp "$REPO_CURSOR_DIR/settings.json" "$CURSOR_CONFIG_DIR/settings.json"
   echo "Applied settings.json"
 else
   echo "settings.json not found in repo"
@@ -26,7 +27,7 @@ if [ -f "$REPO_CURSOR_DIR/extensions.txt" ]; then
   do
     if [ ! -z "$extension" ]; then
       echo "Installing $extension"
-      code --install-extension "$extension"
+      cursor --install-extension "$extension"
     fi
   done < "$REPO_CURSOR_DIR/extensions.txt"
 
@@ -35,4 +36,4 @@ else
   echo "extensions.txt not found in repo"
 fi
 
-echo "VSCode setup complete. Restart VSCode."
+echo "Cursor setup complete. Restart Cursor."
