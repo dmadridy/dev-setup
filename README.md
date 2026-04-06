@@ -32,15 +32,15 @@ The repository is the **single source of truth** for this environment.
 Clone over **HTTPS** first (works before SSH is set up):
 
 ```bash
-git clone https://github.com/dmadridy/cursor-setup.git
-cd cursor-setup
+git clone https://github.com/dmadridy/dev-setup.git
+cd dev-setup
 ```
 
 - You can keep using **HTTPS** only.
 - **Optionally**, after SSH setup below, switch the remote:
 
 ```bash
-git remote set-url origin git@github.com:dmadridy/cursor-setup.git
+git remote set-url origin git@github.com:dmadridy/dev-setup.git
 ```
 
 ---
